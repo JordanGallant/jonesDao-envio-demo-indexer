@@ -1,0 +1,106 @@
+type MiniChefV2_Deposit {
+  id: ID!
+  user: String!
+  pid: BigInt!
+  amount: BigInt!
+  to: String!
+  incentive: BigInt!
+}
+
+type MiniChefV2_EmergencyWithdraw {
+  id: ID!
+  user: String!
+  pid: BigInt!
+  amount: BigInt!
+  to: String!
+}
+
+type MiniChefV2_EmergencyWithdrawal {
+  id: ID!
+  caller: String!
+  receiver: String!
+  tokens: [String!]!
+  nativeBalanc: BigInt!
+}
+
+type MiniChefV2_GovernorUpdated {
+  id: ID!
+  _oldGovernor: String!
+  _newGovernor: String!
+}
+
+type MiniChefV2_Harvest {
+  id: ID!
+  user: String!
+  pid: BigInt!
+  amount: BigInt!
+}
+
+type MiniChefV2_LogPoolAddition {
+  id: ID!
+  pid: BigInt!
+  allocPoint: BigInt!
+  lpToken: String!
+  rewarder: String!
+}
+
+type MiniChefV2_LogSetPool {
+  id: ID!
+  pid: BigInt!
+  allocPoint: BigInt!
+  rewarder: String!
+  overwrite: Boolean!
+}
+
+type MiniChefV2_LogSushiPerSecond {
+  id: ID!
+  sushiPerSecond: BigInt!
+}
+
+type MiniChefV2_LogUpdatePool {
+  id: ID!
+  pid: BigInt!
+  lastRewardTime: BigInt!
+  lpSupply: BigInt!
+  accSushiPerShare: BigInt!
+}
+
+type MiniChefV2_OperatorAdded {
+  id: ID!
+  _newOperator: String!
+}
+
+type MiniChefV2_OperatorRemoved {
+  id: ID!
+  _operator: String!
+}
+
+type MiniChefV2_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type MiniChefV2_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type MiniChefV2_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type MiniChefV2_Withdraw {
+  id: ID!
+  user: String!
+  pid: BigInt!
+  amount: BigInt!
+  to: String!
+}
+

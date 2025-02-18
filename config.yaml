@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: jonesDao
+networks:
+- id: 42161
+  start_block: 0
+  contracts:
+  - name: MiniChefV2
+    address:
+    - 0x0aEfaD19aA454bCc1B1Dd86e18A7d58D0a6FAC38
+    handler: src/EventHandlers.ts
+    events:
+    - event: Deposit(address indexed user, uint256 indexed pid, uint256 amount, address indexed to, uint256 incentive)
+    - event: EmergencyWithdraw(address indexed user, uint256 indexed pid, uint256 amount, address indexed to)
+    - event: EmergencyWithdrawal(address indexed caller, address indexed receiver, address[] tokens, uint256 nativeBalanc)
+    - event: GovernorUpdated(address _oldGovernor, address _newGovernor)
+    - event: Harvest(address indexed user, uint256 indexed pid, uint256 amount)
+    - event: LogPoolAddition(uint256 indexed pid, uint256 allocPoint, address indexed lpToken, address indexed rewarder)
+    - event: LogSetPool(uint256 indexed pid, uint256 allocPoint, address indexed rewarder, bool overwrite)
+    - event: LogSushiPerSecond(uint256 sushiPerSecond)
+    - event: LogUpdatePool(uint256 indexed pid, uint64 lastRewardTime, uint256 lpSupply, uint256 accSushiPerShare)
+    - event: OperatorAdded(address _newOperator)
+    - event: OperatorRemoved(address _operator)
+    - event: RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+    - event: RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: Withdraw(address indexed user, uint256 indexed pid, uint256 amount, address indexed to)
+rollback_on_reorg: false
